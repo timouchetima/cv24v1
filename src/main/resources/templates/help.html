@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+     <link rel="stylesheet" th:href="@{/css/Helps.css}">
+     <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <title>Help</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="Logo de l'Université de Rouen">
+    </div>
+    <div class="title">
+        <h1>Nom de votre projet</h1>
+        <h2>Version 1.0</h2>
+    </div>
+</header>
+<main>
+    <h2 class="titreop"> Liste des opérations:</h2>
+    <h3 class="typeoperati">Liste des CV Format XML</h3>
+    <ul>
+
+        <li><strong> <a th:href="@{/resume/xml}">Liste des cv format xml</a></strong> </li>
+        <li><strong>URL: http://localhost:8080/cv24/resume/xml</strong> </li>
+
+        <li><strong>Méthode attendue:</strong> GET</li>
+        <li><strong>Opération:</strong> Affiche la liste des CV stockés au format XML.</li>
+        <li><strong>Retour:</strong> Flux XML contenant la synthèse des informations pour chaque CV.</li>
+    </ul>
+    <h3 class="typeoperati">Liste des CV Format HTML </h3>
+    <ul>
+
+        <li><strong><a th:href="@{/cv24/resume}">Liste des CVs</a></strong> </li>
+        <li><strong>URL: http://localhost:8080/cv24/resume</strong> </li>
+        <li><strong>Méthode attendue:</strong> GET</li>
+        <li><strong>Opération:</strong> Affiche la liste des CV stockés au format HTML.</li>
+        <li><strong>Retour:</strong> Page HTML présentant les informations de chaque CV.</li>
+    </ul>
+
+    <h3 class="typeoperati">Détail d’un CV Format XML</h3>
+    <ul>
+
+        <li><strong>URL: http://localhost:8080/cv24/xml?id={id}</strong></li>
+        <li><strong>Méthode attendue:</strong> GET</li>
+        <li><strong>Opération:</strong> Affiche le contenu complet du CV spécifié par son identifiant au format XML.</li>
+        <li><strong>Retour:</strong> Flux XML conforme au schéma xsd cv24, comprenant un seul CV.</li>
+
+    </ul>
+    <h3 class="typeoperati">Détail d’un CV Format HTML</h3>
+    <ul>
+
+        <li><strong>URL: http://localhost:8080/cv24/html?id={id}</strong></li>
+        <li><strong>Méthode attendue:</strong> GET</li>
+        <li><strong>Opération:</strong> Affiche le contenu complet du CV spécifié par son identifiant au format HTML.</li>
+        <li><strong>Retour:</strong> Page HTML présentant les informations du CV spécifié.</li>
+
+    </ul>
+    <h3 class="typeoperati">Ajout d’un CV</h3>
+    <ul>
+
+        <!--<li><strong><a th:href="@{/AjoutCV}">AJOUTER UN CV</a></strong> </li>-->
+        <li><strong>URL: http://localhost:8080/cv24/insert</strong> </li>
+        <li><strong>Méthode attendue:</strong> POST</li>
+        <li style="color: black;"><strong>Opération:</strong> Ajoute un nouveau CV à la base de données.</li>
+        <li style="color: black;"><strong>Retour:</strong> Flux XML contenant les informations sur l'opération.</li>
+    </ul>
+    <h3 class="typeoperati" >Suppression d’un CV</h3>
+    <ul>
+        <li style="color: black;"><strong>URL: http://localhost:8080/cv24/delete/{id}</strong> </li>
+        <li style="color: black;"><strong>Méthode attendue:</strong> DELETE</li>
+        <li style="color: black;"><strong>Opération:</strong> Supprime un CV spécifié par identifiant d'une identité.</li>
+        <li style="color: black;"><strong>Retour:</strong> Flux XML contenant les informations sur l'opération.</li>
+    </ul>
+
+    <h3 class="typeoperati" >Recherche des cv </h3>
+    <ul>
+        <li style="color: black;"><strong>URL:http://localhost:8080/cv24/search?date={}&objectif={}</strong> </li>
+        <li style="color: black;"><strong>Méthode attendue:</strong> GET </li>
+        <li style="color: black;"><strong>Opération :</strong>
+            <ul>
+                <li style="color: black;"><strong>date :</strong> Liste des spécifications dont la date est identique, ou postérieure à celle indiquée dans la requête.</li>
+                <li style="color: black;"><strong>objectif :</strong> Liste des CV dont l'objectif spécifié comprend au moins l'un des mots de la requête.</li>
+            </ul>
+        </li>
+        <li style="color: black;"><strong>Retour:</strong> Flux XML contenant les informations sur l'opération.</li>
+    </ul>
+
+</main>
+</body>
+</html>

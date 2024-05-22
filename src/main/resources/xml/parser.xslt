@@ -226,18 +226,25 @@
     <xsl:template match="/">
         <html>
             <head>
-                <link rel="stylesheet" type="text/css" href="cv24.css" />
+                <link rel="stylesheet" type="text/css" href="/css/detailCV.css" />
                 <title>CV24 - XSLT V1.0</title>
             </head>
             <body>
-                <h1>CV24 - XSLT V1.0</h1>
+                <header>
+                    <div class="logo">
+                        <img src="/images/logo.png" alt="Logo de l'Université de Rouen"/>
+                    </div>
+                    <div class="title">
+                        <h1>Nom de votre projet</h1>
+                        <h2>Version 1.0</h2>
+                    </div>
+                </header>
+                <main>
+                <h1>CV24</h1>
 
-                <p>
-                    <xsl:text>Document créé le </xsl:text>
-
-                </p>
 
                 <xsl:apply-templates />
+                </main>
             </body>
         </html>
     </xsl:template>

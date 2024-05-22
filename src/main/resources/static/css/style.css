@@ -1,12 +1,24 @@
+:root {
+    --primary: #3857ac; /* Couleur principale */
+    --secondary: #ff8c00; /* Couleur secondaire */
+    --text-light: #f5f5f5; /* Couleur du texte clair */
+    --text-dark: #333; /* Couleur du texte foncé */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f8f8f8; /* Couleur de fond */
+    color: var(--text-dark);
+    background-image: url('../images/1.jpg');
+    background-size: cover; /* Pour couvrir tout le corps */
+    background-repeat: no-repeat;
 }
 
 header {
-    background-color: #0072bb;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--text-light);
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -19,12 +31,13 @@ header {
 
 .title h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .title h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
+    color: var(--secondary);
 }
 
 main {
@@ -32,23 +45,38 @@ main {
 }
 
 footer {
-    background-color: #0072bb;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 20px 0;
     text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
+a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 table {
-    width: 100%; /* Utilisez toute la largeur disponible */
-    border-collapse: collapse; /* Fusionner les bordures des cellules */
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th, td {
-    padding: 8px; /* Ajouter un remplissage pour un meilleur espacement */
-    text-align: left; /* Aligner le texte à gauche */
-    border: 1px solid #dddddd; /* Ajouter des bordures aux cellules */
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--primary);
+    background-color: var(--text-light);
+    color: var(--text-dark);
 }
 
-
-
+th {
+    background-color: var(--primary);
+    color: var(--text-light);
+}

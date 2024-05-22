@@ -89,6 +89,7 @@
                         <td th:text="${cv.diplomes[0].titre}"></td>
                         <td>
                             <button class="supprimer" th:onclick="'deleteCV(' + ${cv.identite.id} + ')'">Supprimer</button>
+                            <a th:href="@{/cv24/html(id=${cv.identite.id})}">Détail</a>
                         </td>
 
                     </tr>

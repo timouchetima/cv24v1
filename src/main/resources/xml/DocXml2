@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv24:cv24 xmlns:cv24="http://univ.fr/cv24" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univ.fr/cv24 shema.xsd ">
+    <cv24:identite>
+        <cv24:genre>Mme</cv24:genre>
+        <cv24:nom>BOURIAHI</cv24:nom>
+        <cv24:prenom>Fatima</cv24:prenom>
+        <cv24:tel>+33 6 98 76 54 32</cv24:tel>
+        <cv24:mel>fat.bouriahi@example.com</cv24:mel>
+    </cv24:identite>
+    <cv24:objectif statut="emploi">Développeur web</cv24:objectif>
+    <cv24:prof>
+        <cv24:detail>
+            <cv24:datedeb>2018-01-01</cv24:datedeb>
+            <cv24:datefin>2022-12-31</cv24:datefin>
+            <cv24:titre>Développeur front-end</cv24:titre>
+        </cv24:detail>
+        <cv24:detail>
+            <cv24:datedeb>2023-01-01</cv24:datedeb>
+            <cv24:datefin>2024-06-30</cv24:datefin>
+            <cv24:titre>Ingénieur d'études</cv24:titre>
+        </cv24:detail>
+    </cv24:prof>
+    <cv24:competences>
+        <cv24:diplome intitule="Licence" niveau="6">
+            <cv24:date>2017-07-01</cv24:date>
+            <cv24:institut>Université de Lyon</cv24:institut>
+            <cv24:titreD>Licence Informatique</cv24:titreD>
+        </cv24:diplome>
+        <cv24:diplome intitule="Master" niveau="2">
+            <cv24:date>2019-09-01</cv24:date>
+            <cv24:institut>École Centrale Paris</cv24:institut>
+            <cv24:titreD>Master Informatique</cv24:titreD>
+        </cv24:diplome>
+        <cv24:certif>
+            <cv24:datedeb>2023-03-01</cv24:datedeb>
+            <cv24:datefin>2023-05-01</cv24:datefin>
+            <cv24:titre>Scrum Fundamentals Certified</cv24:titre>
+        </cv24:certif>
+        <cv24:certif>
+            <cv24:datedeb>2024-07-01</cv24:datedeb>
+            <cv24:datefin>2024-10-01</cv24:datefin>
+            <cv24:titre>AWS Certified Developer</cv24:titre>
+        </cv24:certif>
+    </cv24:competences>
+    <cv24:divers>
+        <cv24:lv cert="TOEFL" lang="EN" nivs="C1" />
+        <cv24:lv cert="DCL" lang="Fr" nivs="C2" />
+        <cv24:autre titre="Permis B" comment="véhicule personnel" />
+    </cv24:divers>
+</cv24:cv24>

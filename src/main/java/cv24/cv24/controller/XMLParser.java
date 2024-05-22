@@ -432,7 +432,7 @@ public class XMLParser {
     public String genereateHTMLWithXSLT(String fluxXML) {
         StringWriter htmlWriter = new StringWriter();
         try {
-            String xsltchemin = "/xml/parser.xslt";
+            String xsltchemin = "xml/parser.xslt";
 
             InputStream xsltStream = getClass().getClassLoader().getResourceAsStream(xsltchemin);
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

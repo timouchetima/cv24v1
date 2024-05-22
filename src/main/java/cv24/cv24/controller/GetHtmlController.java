@@ -35,7 +35,7 @@ public class GetHtmlController {
         this.langueRepository = langueRepository;
         this.autreRepository = autreRepository;
     }
-
+// //Api pour  liste des cv format html
 
     @GetMapping(value = "/cv24/resume")
     public String getAllCVsForHTML(Model model) {

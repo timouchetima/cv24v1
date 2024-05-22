@@ -1,4 +1,5 @@
 package cv24.cv24.controller;
+
 import cv24.cv24.entities.*;
 import cv24.cv24.repository.*;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
@@ -36,13 +37,11 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 
-
 @RestController
 public class CvController {
 
-    //Ajout desx log pour la gestion
+    // Ajout desx log pour la gestion
     private static final Logger logger = LoggerFactory.getLogger(CvController.class);
-
 
     private final IdentiteRepository identiteRepository;
     private final PosteRepository posteRepository;
@@ -52,7 +51,10 @@ public class CvController {
     private final LangueRepository langueRepository;
     private final AutreRepository autreRepository;
 
-    public CvController(IdentiteRepository identiteRepository, PosteRepository posteRepository, ExperienceRepository experienceRepository, DiplomeRepository diplomeRepository, CertificationRepository certificationRepository, LangueRepository langueRepository, AutreRepository autreRepository) {
+    public CvController(IdentiteRepository identiteRepository, PosteRepository posteRepository,
+            ExperienceRepository experienceRepository, DiplomeRepository diplomeRepository,
+            CertificationRepository certificationRepository, LangueRepository langueRepository,
+            AutreRepository autreRepository) {
         this.identiteRepository = identiteRepository;
         this.posteRepository = posteRepository;
         this.experienceRepository = experienceRepository;
@@ -62,11 +64,11 @@ public class CvController {
         this.autreRepository = autreRepository;
     }
 
+    // Api pour enregistrer un nouveau CV dans la base de données
     @PostMapping("/cv24/insert")
     public ResponseEntity<String> validateXML(@RequestBody String xmlString) {
         Boolean etat = false;
         String xsdFichierPath = "xml/shema.xsd";
-
 
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -76,7 +78,8 @@ public class CvController {
             Document document = builder.parse(new InputSource(new StringReader(xmlString)));
 
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(xsdFichierPath)));
+            Schema schema = schemaFactory
+                    .newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(xsdFichierPath)));
 
             Validator validator = schema.newValidator();
             validator.validate(new DOMSource(document));
@@ -88,11 +91,13 @@ public class CvController {
             int columnNumber = e.getColumnNumber();
             String errorMessage = e.getMessage();
 
-
             // Journaliser l'erreur
-            logger.error("Erreur de validation XML : Ligne {}, Colonne {} - {}", lineNumber, columnNumber, errorMessage);
+            logger.error("Erreur de validation XML : Ligne {}, Colonne {} - {}", lineNumber, columnNumber,
+                    errorMessage);
             // Construire la réponse d'erreur avec les détails
-            String response = String.format("<?xml version=\"1.0\" encoding=\"UTF-8\"?><status>Erreur de validation XML : Ligne %d, Colonne %d - %s</status>", lineNumber, columnNumber, errorMessage);
+            String response = String.format(
+                    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><status>Erreur de validation XML : Ligne %d, Colonne %d - %s</status>",
+                    lineNumber, columnNumber, errorMessage);
             return ResponseEntity.badRequest()
                     .header(HttpHeaders.CONTENT_TYPE, "application/xml")
                     .body(response);
@@ -120,7 +125,8 @@ public class CvController {
 
                 // Construire la réponse XML avec l'en-tête
                 logger.info("CV inséré avec succès dans la base de données");
-                String response = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><cv id=\"" + id + "\" status=\"INSERTED\"/>";
+                String response = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><cv id=\"" + id
+                        + "\" status=\"INSERTED\"/>";
                 return ResponseEntity.ok()
                         .header(HttpHeaders.CONTENT_TYPE, "application/xml")
                         .body(response);
@@ -133,10 +139,8 @@ public class CvController {
                     .header(HttpHeaders.CONTENT_TYPE, "application/xml")
                     .body(response);
 
-
         }
     }
-
 
     // Méthode pour enregistrer un nouveau CV dans la base de données
     private Long saveCV(CV cv) {
@@ -187,19 +191,19 @@ public class CvController {
         // Récupérer toutes les données d'identité de la base de données
         List<Identite> identites = identiteRepository.findAll();
 
-        // Parcourir les données d'identité de la base de données pour comparer avec le CV
+        // Parcourir les données d'identité de la base de données pour comparer avec le
+        // CV
         for (Identite identite : identites) {
             String telAsString = identite.getTel().toString();
-            String sString =cv.getIdentite().getTel().toString();
+            String sString = cv.getIdentite().getTel().toString();
 
             // Comparer nom, prénom et téléphone en ignorant la casse
             if (identite.getNom().equalsIgnoreCase(cv.getIdentite().getNom()) &&
-                    identite.getPrenom().equalsIgnoreCase(cv.getIdentite().getPrenom()))
-                    {
+                    identite.getPrenom().equalsIgnoreCase(cv.getIdentite().getPrenom())) {
                 // Si des correspondances sont trouvées, retourner une indication d'erreur
                 return true;
             }
-            if(telAsString.equals(sString)){
+            if (telAsString.equals(sString)) {
                 return true;
             }
         }
@@ -207,8 +211,7 @@ public class CvController {
         return false;
     }
 
-
-
+    // Api pour liste des cv format xml
 
     @GetMapping(value = "/cv24/resume/xml", produces = "application/xml")
     @ResponseBody
@@ -238,11 +241,11 @@ public class CvController {
         }
     }
 
-
-
+    // Api pour detail cv format xml
     @GetMapping(value = "/cv24/xml", produces = "application/xml")
     @ResponseBody
-    public String getCVDetailInXML(@RequestParam("id") Long id) throws ParserConfigurationException, IOException, SAXException {
+    public String getCVDetailInXML(@RequestParam("id") Long id)
+            throws ParserConfigurationException, IOException, SAXException {
         Identite identite = identiteRepository.findById(id).orElse(null);
         XMLParser xp = new XMLParser();
         if (identite == null) {
@@ -269,7 +272,8 @@ public class CvController {
             Document document = builder.parse(new InputSource(new StringReader(fxml)));
 
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(xsdFichierPath)));
+            Schema schema = schemaFactory
+                    .newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(xsdFichierPath)));
             Validator validator = schema.newValidator();
             logger.info("génération du XML du CV");
             validator.validate(new DOMSource(document));
@@ -281,6 +285,7 @@ public class CvController {
 
     }
 
+    // Api pour supprimer cv
     @DeleteMapping(value = "/cv24/delete/{id}", produces = "application/xml")
     @Transactional
     public ResponseEntity<String> deleteCV(@PathVariable Long id) {
@@ -336,8 +341,11 @@ public class CvController {
                     .body(response);
         }
     }
+
+    // Api pour detail cv format html
     @GetMapping(value = "/cv24/html")
-    public String getCVDetailHTML(@RequestParam("id") Long id, Model model) throws ParserConfigurationException, IOException, SAXException, TransformerException {
+    public String getCVDetailHTML(@RequestParam("id") Long id, Model model)
+            throws ParserConfigurationException, IOException, SAXException, TransformerException {
 
         Identite identite = identiteRepository.findById(id).orElse(null);
         XMLParser xp = new XMLParser();
@@ -365,8 +373,10 @@ public class CvController {
             Document document = builder.parse(new InputSource(new StringReader(fxml)));
 
             SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = schemaFactory.newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(xsdFichierPath)));
-            Validator validator = schema.newValidator();;
+            Schema schema = schemaFactory
+                    .newSchema(new StreamSource(getClass().getClassLoader().getResourceAsStream(xsdFichierPath)));
+            Validator validator = schema.newValidator();
+            ;
             validator.validate(new DOMSource(document));
             logger.info("generation du html avec succes");
         } catch (ParserConfigurationException | SAXException | IOException e) {
@@ -375,13 +385,10 @@ public class CvController {
         }
         XMLParser xmlParser = new XMLParser();
 
-
         return xp.genereateHTMLWithXSLT(fxml);
     }
 
-
-
-    //fonctionalite recherche
+    // //Api pour fonctionalite recherche
 
     @GetMapping(value = "/cv24/search", produces = "application/xml")
     @ResponseBody
@@ -441,7 +448,5 @@ public class CvController {
             return "<status>ERROR</status>";
         }
     }
-
-
 
 }

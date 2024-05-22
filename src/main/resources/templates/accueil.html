@@ -10,15 +10,18 @@
  </head>
  <body>
  <header>
-     <div class="logo">
-         <img th:src="@{/images/logo.png}" alt="Logo de l'Université de Rouen">
-     </div>
+    
      <div class="title">
          <h1>CVServiceREST</h1>
          <h2>Version 1.0</h2>
      </div>
+     <div class="logo">
+        <img th:src="@{/images/logo.png}" alt="Logo de l'Université de Rouen">
+    </div>
  </header>
- <main>
+ <main style="
+    text-align: center;
+    padding: 2em;">
      <h2>Pour plus d'information :</h2>
      <a th:href="@{/help}">Accéder à la page Help</a>
 

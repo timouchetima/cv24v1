@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "44832dba-e1b0-4d78-97f1-d4d2a3c80a09",
+		"name": "cv24_Bouriahi_Abbas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20658948"
+	},
+	"item": [
+		{
+			"name": "INSERT REUSSI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<cv24:cv24 xmlns:cv24=\"http://univ.fr/cv24\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://univ.fr/cv24 shema.xsd \">\n    <cv24:identite>\n        <cv24:genre>Mme</cv24:genre>\n        <cv24:nom>DUBOIS</cv24:nom>\n        <cv24:prenom>Ilina</cv24:prenom>\n        <cv24:tel>+33 7 75 48 23 45</cv24:tel>\n        <cv24:mel>exempl@gmail.com</cv24:mel>\n    </cv24:identite>\n    <cv24:objectif statut=\"emploi\">INFFFF</cv24:objectif>\n    <cv24:prof>\n        <cv24:detail>\n            <cv24:datedeb>2001-01-01</cv24:datedeb>\n            <cv24:datefin>2001-01-01</cv24:datefin>\n            <cv24:titre>Directrice Adjoint</cv24:titre>\n        </cv24:detail>\n        <cv24:detail>\n            <cv24:datedeb>2001-01-01</cv24:datedeb>\n            <cv24:datefin>2001-01-01</cv24:datefin>\n            <cv24:titre>Chef de projet</cv24:titre>\n        </cv24:detail>\n        <cv24:detail>\n            <cv24:datedeb>2001-01-01</cv24:datedeb>\n            <cv24:datefin>2001-01-01</cv24:datefin>\n            <cv24:titre>dev ops</cv24:titre>\n        </cv24:detail>\n    </cv24:prof>\n    <cv24:competences>\n        <cv24:diplome intitule=\"Licence\" niveau=\"7\">\n            <cv24:date>2018-07-11</cv24:date>\n            <cv24:institut>Université DE BÉJAIA </cv24:institut>\n            <cv24:titreD>Licence Informatique</cv24:titreD>\n        </cv24:diplome>\n        <cv24:diplome intitule=\"Bac\" niveau=\"1\">\n            <cv24:date>2018-01-01</cv24:date>\n            <cv24:institut>Lycée Taos amrouche</cv24:institut>\n            <cv24:titreD>Bac SE</cv24:titreD>\n        </cv24:diplome>\n        <cv24:diplome intitule=\"Master\" niveau=\"2\">\n            <cv24:date>2018-09-11</cv24:date>\n            <cv24:institut>Université DE BÉJAIA </cv24:institut>\n            <cv24:titreD> Master GL</cv24:titreD>\n        </cv24:diplome>\n\n        <cv24:certif>\n            <cv24:datedeb>1990-03-01</cv24:datedeb>\n            <cv24:datefin>1990-05-01</cv24:datefin>\n            <cv24:titre>agile scrum</cv24:titre>\n        </cv24:certif>\n        <cv24:certif>\n            <cv24:datedeb>2022-05-01</cv24:datedeb>\n            <cv24:datefin>2022-10-01</cv24:datefin>\n            <cv24:titre>CCNA CISCO</cv24:titre>\n        </cv24:certif>\n    </cv24:competences>\n    <cv24:divers>\n        <cv24:lv cert=\"MAT\" lang=\"fr\" />\n        <cv24:lv cert=\"CLES\" lang=\"Fr\" nivs=\"C1\" />\n        <cv24:lv cert=\"TOEIC\" lang=\"EN\" nivi=\"250\" />\n        <cv24:autre titre=\"permis de conduire\" comment=\"B\" />\n    </cv24:divers>\n</cv24:cv24>\n\n\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/insert",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT ERREUR Validation schema XSD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<cv24:cv24 xmlns:cv24=\"http://univ.fr/cv24\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://univ.fr/cv24 shema.xsd \">\n   <cv24:identite>\n        <cv24:genre>Mme</cv24:genre>\n        <cv24:nom>BOURIAHI</cv24:nom>\n        <cv24:prenom>Fatima</cv24:prenom>\n        <cv24:tel>+36 98 76 54 32</cv24:tel>\n        <cv24:mel>fat.bouriahi@example.com</cv24:mel>\n    </cv24:identite>\n    <cv24:objectif statut=\"emploi\">INFFFF</cv24:objectif>\n    <cv24:prof>\n         <cv24:detail>\n            <cv24:datedeb>2018-01-01</cv24:datedeb>\n            <cv24:datefin>2022-12-31</cv24:datefin>\n            <cv24:titre>Développeur front-end</cv24:titre>\n        </cv24:detail>\n        <cv24:detail>\n            <cv24:datedeb>2023-01-01</cv24:datedeb>\n            <cv24:datefin>2024-06-30</cv24:datefin>\n            <cv24:titre>Ingénieur d'études</cv24:titre>\n        </cv24:detail>       \n    </cv24:prof>\n    <cv24:competences>\n        <cv24:diplome intitule=\"Licence\" niveau=\"7\">\n            <cv24:date>2018-07-11</cv24:date>\n            <cv24:institut>Université DE BÉJAIA </cv24:institut>\n            <cv24:titreD>Licence Informatique</cv24:titreD>\n        </cv24:diplome>\n        <cv24:diplome intitule=\"Bac\" niveau=\"1\">\n            <cv24:date>2018-01-01</cv24:date>\n            <cv24:institut>Lycée Taos amrouche</cv24:institut>\n            <cv24:titreD>Bac SE</cv24:titreD>\n        </cv24:diplome>\n        <cv24:diplome intitule=\"Master\" niveau=\"2\">\n            <cv24:date>2018-09-11</cv24:date>\n            <cv24:institut>Université DE BÉJAIA </cv24:institut>\n            <cv24:titreD> Master GL</cv24:titreD>\n        </cv24:diplome>\n\n        <cv24:certif>\n            <cv24:datedeb>1990-03-01</cv24:datedeb>\n            <cv24:datefin>1990-05-01</cv24:datefin>\n            <cv24:titre>agile scrum</cv24:titre>\n        </cv24:certif>\n        <cv24:certif>\n            <cv24:datedeb>2022-05-01</cv24:datedeb>\n            <cv24:datefin>2022-10-01</cv24:datefin>\n            <cv24:titre>CCNA CISCO</cv24:titre>\n        </cv24:certif>\n    </cv24:competences>\n    <cv24:divers>\n        <cv24:lv cert=\"MAT\" lang=\"fr\" />\n        <cv24:lv cert=\"CLES\" lang=\"Fr\" nivs=\"C1\" />\n        <cv24:lv cert=\"TOEIC\" lang=\"EN\" nivi=\"250\" />\n        <cv24:autre titre=\"permis de conduire\" comment=\"B\" />\n    </cv24:divers>\n</cv24:cv24>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/insert",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INsert CV deja existant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<cv24:cv24 xmlns:cv24=\"http://univ.fr/cv24\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://univ.fr/cv24 shema.xsd \">\n   <cv24:identite>\n        <cv24:genre>Mme</cv24:genre>\n        <cv24:nom>BOURIAHI</cv24:nom>\n        <cv24:prenom>Fatima</cv24:prenom>\n        <cv24:tel>+33 6 98 76 54 32</cv24:tel>\n        <cv24:mel>fat.bouriahi@example.com</cv24:mel>\n    </cv24:identite>\n    <cv24:objectif statut=\"emploi\">INFFFF</cv24:objectif>\n    <cv24:prof>\n         <cv24:detail>\n            <cv24:datedeb>2018-01-01</cv24:datedeb>\n            <cv24:datefin>2022-12-31</cv24:datefin>\n            <cv24:titre>Développeur front-end</cv24:titre>\n        </cv24:detail>\n        <cv24:detail>\n            <cv24:datedeb>2023-01-01</cv24:datedeb>\n            <cv24:datefin>2024-06-30</cv24:datefin>\n            <cv24:titre>Ingénieur d'études</cv24:titre>\n        </cv24:detail>       \n    </cv24:prof>\n    <cv24:competences>\n        <cv24:diplome intitule=\"Licence\" niveau=\"7\">\n            <cv24:date>2018-07-11</cv24:date>\n            <cv24:institut>Université DE BÉJAIA </cv24:institut>\n            <cv24:titreD>Licence Informatique</cv24:titreD>\n        </cv24:diplome>\n        <cv24:diplome intitule=\"Bac\" niveau=\"1\">\n            <cv24:date>2018-01-01</cv24:date>\n            <cv24:institut>Lycée Taos amrouche</cv24:institut>\n            <cv24:titreD>Bac SE</cv24:titreD>\n        </cv24:diplome>\n        <cv24:diplome intitule=\"Master\" niveau=\"2\">\n            <cv24:date>2018-09-11</cv24:date>\n            <cv24:institut>Université DE BÉJAIA </cv24:institut>\n            <cv24:titreD> Master GL</cv24:titreD>\n        </cv24:diplome>\n\n        <cv24:certif>\n            <cv24:datedeb>1990-03-01</cv24:datedeb>\n            <cv24:datefin>1990-05-01</cv24:datefin>\n            <cv24:titre>agile scrum</cv24:titre>\n        </cv24:certif>\n        <cv24:certif>\n            <cv24:datedeb>2022-05-01</cv24:datedeb>\n            <cv24:datefin>2022-10-01</cv24:datefin>\n            <cv24:titre>CCNA CISCO</cv24:titre>\n        </cv24:certif>\n    </cv24:competences>\n    <cv24:divers>\n        <cv24:lv cert=\"MAT\" lang=\"fr\" />\n        <cv24:lv cert=\"CLES\" lang=\"Fr\" nivs=\"C1\" />\n        <cv24:lv cert=\"TOEIC\" lang=\"EN\" nivi=\"250\" />\n        <cv24:autre titre=\"permis de conduire\" comment=\"B\" />\n    </cv24:divers>\n</cv24:cv24>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/insert",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "liste des cv format xml",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/resume/xml",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"resume",
+						"xml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detail cv xml",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/xml?id=54",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"xml"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "54"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detail cv html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/html?id=54",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"html"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "54"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppression d'un cv existant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/delete/54",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"delete",
+						"54"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recherche avec objectif non existant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/search?date=2024-07-11&objectif=Développement logiciel",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-07-11"
+						},
+						{
+							"key": "objectif",
+							"value": "Développement logiciel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "recherche avec objectif",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/search?date=2018-07-11&objectif=Développement logiciel",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"search"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2018-07-11"
+						},
+						{
+							"key": "objectif",
+							"value": "Développement logiciel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "liste cv format html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/resume",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"resume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detai cv xml non existant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/xml?id=5",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"xml"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detail d'un cv format html non existant ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/html?id=5",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"html"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suppression d'un cv non existant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://app-eff886a4-edec-4cf8-9df5-44807211ba11.cleverapps.io/cv24/delete/5",
+					"protocol": "https",
+					"host": [
+						"app-eff886a4-edec-4cf8-9df5-44807211ba11",
+						"cleverapps",
+						"io"
+					],
+					"path": [
+						"cv24",
+						"delete",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
